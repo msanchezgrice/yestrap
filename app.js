@@ -39,8 +39,18 @@ function bindForm(id) {
     }
 
     try {
-      // If you later add a real endpoint, set the action attribute to 'https://...'
-      if (isRemoteHttpAction) {
+      // If Vercel serverless is available, prefer it
+      const sameOriginApi = '/api/subscribe';
+      const canCallSameOrigin = !!(window && window.location && window.fetch);
+
+      if (canCallSameOrigin) {
+        const res = await fetch(sameOriginApi, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        if (!res.ok) throw new Error('Network');
+      } else if (isRemoteHttpAction) {
         const res = await fetch(form.action, {
           method: form.method || 'POST',
           headers: { 'Content-Type': 'application/json' },

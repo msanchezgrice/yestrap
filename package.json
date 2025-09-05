@@ -1,0 +1,20 @@
+{
+  "name": "yestrap",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "The Yes Trap landing page with serverless subscribe API",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "serve -s ."
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@vercel/kv": "^1.0.0",
+    "resend": "^3.2.0"
+  }
+}
+
+
