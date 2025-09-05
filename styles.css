@@ -114,6 +114,8 @@ h3 { margin: 0 0 6px; font-size: 20px; }
 
 /* Author */
 .author-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+.author-photo { margin: 0; }
+.author-photo img { display: block; width: 220px; max-width: 100%; height: auto; border-radius: 14px; border: 1px solid rgba(255,255,255,.12); box-shadow: var(--shadow); }
 .cta-inline { display: flex; gap: 14px; margin-top: 16px; }
 .link { color: var(--accent); text-decoration: none; font-weight: 700; }
 .link:hover { text-decoration: underline; }
@@ -125,6 +127,9 @@ h3 { margin: 0 0 6px; font-size: 20px; }
 .footer-inner { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; }
 .site-footer a { color: var(--muted); }
 .site-footer a:hover { color: var(--white); }
+.socials { display: flex; gap: 12px; }
+.social { color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.12); border-radius: 10px; }
+.social:hover { color: var(--white); border-color: rgba(255,255,255,.2); }
 
 /* Overlay pages */
 .overlay-body { margin: 0; background: radial-gradient(1200px 600px at 20% -10%, #1f2937 0%, transparent 60%), radial-gradient(900px 600px at 100% -5%, #0b2550 0%, transparent 50%), var(--bg); font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color: var(--text); }
@@ -138,6 +143,7 @@ h3 { margin: 0 0 6px; font-size: 20px; }
 @media (max-width: 980px) {
   .hero-grid { grid-template-columns: 1fr; }
   .learn-grid { grid-template-columns: 1fr 1fr; }
+  .author-grid { grid-template-columns: 1fr; }
   
 }
 @media (max-width: 600px) {

@@ -27,7 +27,17 @@
     <div class="overlay-panel">
       <div class="overlay-badge">Coming Soon</div>
       <h1 class="overlay-title">Purchase Coming Soon</h1>
-      <p class="overlay-copy">We’ll add the ESP email capture here once live. For now, this page is used for ads conversion tracking.</p>
+      <p class="overlay-copy">Drop your email and we’ll notify you when purchase links go live.</p>
+
+      <!-- Mailchimp embed (replace action URL and IDs) -->
+      <form class="overlay-form" action="https://YOUR_DC.list-manage.com/subscribe/post?u=YOUR_U_ID&amp;id=YOUR_LIST_ID" method="post" target="_blank" novalidate>
+        <div class="overlay-row">
+          <label class="sr-only" for="mc-email">Email address</label>
+          <input id="mc-email" name="EMAIL" type="email" inputmode="email" autocomplete="email" required placeholder="you@example.com">
+          <button class="btn" type="submit">Notify me</button>
+        </div>
+        <p class="overlay-note micro">Mailchimp powered. Double opt‑in recommended. You can unsubscribe anytime.</p>
+      </form>
       <a href="/" class="btn btn-dark">Back to site</a>
     </div>
   </main>
