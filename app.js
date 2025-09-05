@@ -9,7 +9,6 @@ function bindForm(id) {
   const message = form.querySelector('.status');
 
   form.addEventListener('submit', async (e) => {
-    e.preventDefault();
     const email = emailInput.value.trim();
     message.textContent = '';
 
@@ -20,9 +19,28 @@ function bindForm(id) {
       return;
     }
 
+    const actionAttr = form.getAttribute('action') || '';
+    const hasExplicitAction = actionAttr.trim().length > 0;
+    const isRemoteHttpAction = /^https?:\/\//i.test(actionAttr);
+    const isNetlifyHost = /netlify/i.test(window.location.hostname);
+    const isNetlifyForm = form.hasAttribute('data-netlify');
+
+    // If hosted on Netlify and using Netlify forms without an explicit action,
+    // let the native submission happen so Netlify can capture it.
+    const allowNativeNetlifySubmit = isNetlifyHost && isNetlifyForm && !hasExplicitAction;
+
+    if (!allowNativeNetlifySubmit) {
+      e.preventDefault();
+    }
+
+    if (allowNativeNetlifySubmit) {
+      // Fall through to native submit; do not handle via fetch/local.
+      return;
+    }
+
     try {
-      // If you later add a real endpoint, set form.action = 'https://...'
-      if (form.action && form.action.startsWith('http')) {
+      // If you later add a real endpoint, set the action attribute to 'https://...'
+      if (isRemoteHttpAction) {
         const res = await fetch(form.action, {
           method: form.method || 'POST',
           headers: { 'Content-Type': 'application/json' },
