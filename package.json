@@ -13,7 +13,8 @@
   },
   "dependencies": {
     "@vercel/kv": "^1.0.0",
-    "resend": "^3.2.0"
+    "resend": "^3.2.0",
+    "@supabase/supabase-js": "^2.44.0"
   }
 }
 
