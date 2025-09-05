@@ -9,6 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17534795165"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} 
+    gtag('js', new Date());
+
+    gtag('config', 'AW-17534795165');
+  </script>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="overlay-body">
@@ -20,6 +29,14 @@
       <a href="/" class="btn btn-dark">Back to site</a>
     </div>
   </main>
+  <script>
+    // Fire a page-load conversion for Ads on the success page
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17534795165/comingsoon_email_page'
+      });
+    }
+  </script>
 </body>
 </html>
 
