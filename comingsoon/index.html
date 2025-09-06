@@ -33,18 +33,44 @@
       <h1 class="overlay-title">Purchase Coming Soon</h1>
       <p class="overlay-copy">Drop your email and we’ll notify you when purchase links go live.</p>
 
-      <!-- Mailchimp embed (replace action URL and IDs) -->
-      <form class="overlay-form" action="https://YOUR_DC.list-manage.com/subscribe/post?u=YOUR_U_ID&amp;id=YOUR_LIST_ID" method="post" target="_blank" novalidate>
+      <form class="overlay-form" id="subscribe-form" novalidate>
         <div class="overlay-row">
-          <label class="sr-only" for="mc-email">Email address</label>
-          <input id="mc-email" name="EMAIL" type="email" inputmode="email" autocomplete="email" required placeholder="you@example.com">
+          <label class="sr-only" for="email">Email address</label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="you@example.com">
           <button class="btn" type="submit">Notify me</button>
         </div>
-        <p class="overlay-note micro">Mailchimp powered. Double opt‑in recommended. You can unsubscribe anytime.</p>
+        <p id="form-status" class="overlay-note micro" role="status" aria-live="polite"></p>
       </form>
       <a href="/" class="btn btn-dark">Back to site</a>
     </div>
   </main>
+  <script>
+    const form = document.getElementById('subscribe-form');
+    if (form) {
+      const emailInput = form.querySelector('#email');
+      const status = document.getElementById('form-status');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        status.textContent = '';
+        const email = (emailInput.value || '').trim();
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          status.textContent = 'Please enter a valid email.';
+          return;
+        }
+        try {
+          const res = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+          });
+          if (!res.ok) throw new Error('network');
+          window.location.href = '/comingsoon/email';
+        } catch (err) {
+          status.textContent = 'Something went wrong. Please try again later.';
+        }
+      });
+    }
+  </script>
 </body>
 </html>
 
