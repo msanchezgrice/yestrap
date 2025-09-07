@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enter Password — The Yes Trap</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="overlay-body">
+  <main class="overlay">
+    <div class="overlay-panel">
+      <div class="overlay-badge">Private Preview</div>
+      <h1 class="overlay-title">Enter password</h1>
+      <form id="pw-form" class="overlay-form" novalidate>
+        <div class="overlay-row">
+          <label class="sr-only" for="pw">Password</label>
+          <input id="pw" type="password" placeholder="Password" autocomplete="current-password" required>
+          <button class="btn" type="submit">Unlock</button>
+        </div>
+        <p id="pw-status" class="overlay-note micro" role="status" aria-live="polite"></p>
+      </form>
+      <a href="/" class="btn btn-dark">Back</a>
+    </div>
+  </main>
+  <script>
+    const form = document.getElementById('pw-form');
+    const input = document.getElementById('pw');
+    const status = document.getElementById('pw-status');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if ((input.value || '').trim() === 'test123') {
+        sessionStorage.setItem('yestrap_unlocked', 'true');
+        window.location.replace('/preview');
+      } else {
+        status.textContent = 'Incorrect password.';
+      }
+    });
+  </script>
+</body>
+</html>
+

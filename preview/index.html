@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Preview — The Yes Trap</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script>
+    // Simple client-side guard; not security. Sets a session flag on unlock.
+    if (sessionStorage.getItem('yestrap_unlocked') !== 'true') {
+      window.location.replace('/unlock');
+    }
+  </script>
+</head>
+<body>
+  <!-- BEGIN: Copied content from the original landing page -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="YesTrap home">
+        <span class="logo">🙂</span>
+        <span class="brand-text">The Yes Trap</span>
+      </a>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#learn">What you'll learn</a>
+        <a href="#author">Author</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">📣 Coming Soon</div>
+          <h1 id="hero-title">The Yes Trap</h1>
+          <p class="subtitle">How Always‑Positive AI Is Leading Us Astray</p>
+          <p class="lede">It feels good when your tools always agree. That’s the point. But agreeable answers can quietly bend your judgment toward worse decisions. <em>The Yes Trap</em> is the consumer’s field guide to spotting the hooks, understanding the incentives, and getting back to clear thinking.</p>
+        </div>
+
+        <div class="hero-art">
+          <figure class="book">
+            <img src="/yestrap.png" alt="Mockup of the book cover titled The Yes Trap" loading="eager"/>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container narrow">
+        <h2>About the book</h2>
+        <p><strong>The Yes Trap</strong> explains how today’s AI systems learn to be <em>agreeable</em>—because we reward them for it—and why that friendly behavior can quietly steer us wrong. It blends psychology, product design, and real‑world cases to show how “polite” answers and engagement metrics create a soft path from comfort to consequences.</p>
+        <ul class="checklist">
+          <li><strong>The Comfort Bubble:</strong> why friendly, low‑friction answers feel right—even when they aren’t.</li>
+          <li><strong>The Flattery Fog:</strong> the praise‑heavy tone that blurs risk and over‑confidence.</li>
+          <li><strong>The Yes Spiral:</strong> how agreeable feedback loops become addictive.</li>
+          <li><strong>Incentives that bend truth:</strong> when satisfaction and engagement win over accuracy.</li>
+          <li><strong>Real‑world stakes:</strong> what happens when brands ship “yes‑bots,” and how liability is shifting.</li>
+          <li><strong>A practical playbook:</strong> prompts, habits, and product patterns that make help honest.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="learn" class="section alt">
+      <div class="container">
+        <h2>What you'll learn</h2>
+        <div class="learn-grid">
+          <div class="card">
+            <h3>Spot the hooks</h3>
+            <p>Quick tells of agreeable AI: tone, certainty without sources, and “you’re right!” language that pads your priors.</p>
+          </div>
+          <div class="card">
+            <h3>Break the loop</h3>
+            <p>Simple counter‑moves: “disconfirm me” prompts, source checks, and a three‑question filter to slow the spiral.</p>
+          </div>
+          <div class="card">
+            <h3>Understand the incentives</h3>
+            <p>Why companies tune for engagement and why preference training often rewards flattery over accuracy.</p>
+          </div>
+          <div class="card">
+            <h3>Design for truth</h3>
+            <p>For builders: uncertainty displays, respectful disagreement patterns, and “why I differ” explanations users trust.</p>
+          </div>
+          <div class="card">
+            <h3>Protect your people</h3>
+            <p>Guidance for families and teams: teach healthy skepticism, set red‑teaming habits, and use tools without losing the plot.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="author" class="section">
+      <div class="container author-grid">
+        <div>
+          <h2>About the author</h2>
+          <p><strong>Miguel Sanchez‑Grice</strong> is a product leader and game GM who has tuned reinforcement loops at scale—from social gaming at Zynga to running a studio team in mobile gaming. As a founder and builder, he’s shipped AI tools and mini‑apps, giving him a rare, practical lens on how preference‑optimized systems behave in the wild. In <em>The Yes Trap</em>, Miguel translates lessons from game design, therapy‑informed coaching, and AI research into a clear consumer playbook for staying grounded when your tools are trained to please you.</p>
+          <div class="cta-inline">
+            <a href="mailto:press@yestrap.com" class="link">Media &amp; speaking</a>
+          </div>
+        </div>
+        <figure class="author-photo">
+          <img src="/Miguel profile.jpeg" alt="Photo of Miguel Sanchez‑Grice" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+
+    <section id="faq" class="section alt">
+      <div class="container narrow">
+        <h2>FAQ</h2>
+        <details>
+          <summary>When is the book coming out?</summary>
+          <p>We’re in final development now. Join the list and you’ll get the first look at cover reveal, pre‑order links, and tour dates.</p>
+        </details>
+        <details>
+          <summary>Is this anti‑AI?</summary>
+          <p>No. It’s pro‑clarity. The goal is to keep the empathy and utility of AI while adding the structure that keeps it honest.</p>
+        </details>
+        <details>
+          <summary>Will there be ebook and audio?</summary>
+          <p>Yes—print, ebook, and audiobook are planned. We’ll email formats and release windows as soon as they’re locked.</p>
+        </details>
+        <details>
+          <summary>I build products. Is there a section for teams?</summary>
+          <p>Yes. There’s a practical toolkit—dissent‑inviting UX patterns, uncertainty displays, and a checklist for avoiding yes‑bots.</p>
+        </details>
+        <details>
+          <summary>How will you use my email?</summary>
+          <p>Only to send launch‑related updates for <em>The Yes Trap</em>. No spam; no selling your data.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Miguel Sanchez‑Grice · <a href="mailto:press@yestrap.com">press@yestrap.com</a></p>
+      <div class="socials">
+        <a class="social" href="https://twitter.com/" aria-label="Twitter" rel="noopener" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 0 0 1.88-2.36 8.56 8.56 0 0 1-2.71 1.04 4.26 4.26 0 0 0-7.26 3.88A12.09 12.09 0 0 1 3.16 4.9a4.26 4.26 0 0 0 1.32 5.68 4.22 4.22 0 0 1-1.93-.53v.05a4.26 4.26 0 0 0 3.42 4.18 4.29 4.29 0 0 1-1.92.07 4.27 4.27 0 0 0 3.98 2.96A8.56 8.56 0 0 1 2 19.54a12.08 12.08 0 0 0 6.54 1.92c7.85 0 12.14-6.5 12.14-12.13 0-.18 0-.36-.01-.54A8.67 8.67 0 0 0 24 5.1a8.5 8.5 0 0 1-2.54.7z"/></svg>
+        </a>
+        <a class="social" href="https://www.linkedin.com/" aria-label="LinkedIn" rel="noopener" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.05c.53-1 1.85-2.2 3.8-2.2 4.06 0 4.8 2.67 4.8 6.15V24h-4v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8V24h-4V8z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <!-- END copied content -->
+</body>
+</html>
+
