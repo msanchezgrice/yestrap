@@ -1,44 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>The Yes Trap — Coming Soon</title>
-  <meta name="description" content="The Yes Trap: How Always-Positive AI Is Leading Us Astray. Join the waitlist for launch news, early chapters, and tour dates.">
-  <meta property="og:title" content="The Yes Trap — Coming Soon">
-  <meta property="og:description" content="How Always-Positive AI Is Leading Us Astray. Join the waitlist for launch updates.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="yestrap.png">
-  <meta property="og:url" content="https://yestrap.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17534795165"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date());
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yes Trap  Coming Soon</title>
+    <meta name="description" content="Boundaries, scripts, and better choices." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Yes Trap" />
+    <meta property="og:description" content="Boundaries, scripts, and better choices." />
+    <meta property="og:url" content="https://yestrap.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Yes Trap" />
+    <meta name="twitter:description" content="Boundaries, scripts, and better choices." />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+    <script>
+      window.SITE_ID = "yestrap.com";
+      window.SITE_NAME = "Yes Trap";
+    </script>
+    <script src="posthog.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
 
-    gtag('config', 'AW-17534795165');
-    // Optional: add GA4 measurement ID below to enable full analytics (pageviews, events)
-    // gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  <!-- Vercel Web Analytics -->
-  <script defer src="/_vercel/insights/script.js"></script>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body class="overlay-body">
-  <main class="overlay">
-    <div class="overlay-panel">
-      <div class="overlay-badge">Coming Soon</div>
-      <h1 class="overlay-title">The Yes Trap</h1>
-      <p class="overlay-copy">Full site is in private preview. Enter the password to view.</p>
-      <a class="btn" href="/unlock">Enter password</a>
-      <a class="btn btn-dark" href="/comingsoon">Get notified</a>
-    </div>
-  </main>
-</body>
+    <header class="site-header">
+      <div class="logo">Yes Trap</div>
+      <span class="pill">Coming soon</span>
+    </header>
+
+    <main>
+      <section class="hero" data-reveal>
+        <p class="kicker">Break the habit of overcommitting.</p>
+        <h1>Yes Trap</h1>
+        <p class="subtitle">Boundaries, scripts, and better choices.</p>
+        <form id="waitlist-form" class="waitlist" data-reveal>
+          <input
+            type="email"
+            name="email"
+            placeholder="you@domain.com"
+            aria-label="Email address"
+            required
+          />
+          <button type="submit" data-ph-event="waitlist_submit">Subscribe for updates</button>
+        </form>
+        <p id="waitlist-status" class="status">No spam. Just progress updates.</p>
+      </section>
+
+      <section class="grid" data-reveal>
+        <article class="card">
+          <h3>Clarity</h3>
+          <p>Turn fuzzy ideas into a focused plan you can act on.</p>
+        </article>
+        <article class="card">
+          <h3>Momentum</h3>
+          <p>Ship in small, confident steps with clear next actions.</p>
+        </article>
+        <article class="card">
+          <h3>Signal</h3>
+          <p>Learn what matters before you commit heavy time or budget.</p>
+        </article>
+      </section>
+
+      <section class="steps" data-reveal>
+        <div>
+          <h2>How it works</h2>
+          <p>We are building a lightweight product that stays close to your goals, keeps you focused, and surfaces the right next step.</p>
+        </div>
+        <ol>
+          <li><span>01</span> Define the problem in one page.</li>
+          <li><span>02</span> Validate with real-world signals.</li>
+          <li><span>03</span> Launch a tight first version.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>yestrap.com</span>
+      <span>Built in public. Updates coming soon.</span>
+    </footer>
+  </body>
 </html>
